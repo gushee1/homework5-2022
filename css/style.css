@@ -1,0 +1,145 @@
+#logo {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    animation: moveTitle 5s;
+}
+
+@keyframes moveTitle {
+    from {width: 25px;}
+    to {width: 475px;}
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+
+body {
+    font-family: 'Poppins', serif;
+    background-color: #f1f1f1;
+    background-image: url("/images/concrete_seamless.png");
+}
+
+.nav_links {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+a:visited {
+    color: default;
+}
+
+
+.card > header {
+    background: #288088;
+    border-style: solid;
+    border-width: 2px;
+    border-color: #45adad;
+    padding: 20px 0px 20px 0px;
+    border-radius: 50px 50px 0px 0px;
+    overflow: hidden;
+}
+
+div.card {
+    border-radius: 50px 50px 0px 0px;
+    flex-basis: 450px;
+}
+
+.card h4 {
+    text-align: center;
+}
+
+.pricing {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.gallery {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.gallery > img {
+    border-style: solid;
+    border-width: 10px;
+    border-color: #50c7c7;
+    margin: 10px;
+    width: 300px;
+}
+
+@media screen and (min-width: 900px) {
+    body > header {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        position: fixed;
+        width: 100%;
+    }
+
+    body > header + .about {
+        padding-top: 102px;
+    }
+
+    .nav_links {
+        display: flex;
+        flex-direction: row;
+        justify-content: right;
+    }
+
+    #logo {
+        align-self: flex-start;
+        margin-right: auto;
+        margin-left: 0px;
+    }
+
+    .pricing {
+        flex-direction: row;
+        justify-content: center;
+    }
+
+    div.card {
+        flex-basis: 275px;
+    }
+}
+
+@media (prefers-reduced-motion) {
+    #logo {
+        animation: none;
+    }
+}
+
+@media print {
+    body {
+        font-family: Arial, Helvetica;
+        background-image: none;
+    }
+
+    .nav_links {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+    }
+
+    .pricing {
+        display: flex;
+        flex-direction: row;
+        align-items: flex-end;
+        flex-basis: 325px;
+    }
+
+    div.card {
+        border-style: solid;
+        border-width: 2px;
+        border-color: #45addd;
+    }
+
+    .gallery, #gallery {
+        display: none;
+    }
+
+    .card li:nth-child(2)::after {
+        content: "\01F44D";
+    }
+}
